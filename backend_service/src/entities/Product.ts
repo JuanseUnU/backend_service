@@ -17,4 +17,5 @@ export class Product {
 
   @Column("text")
   talla!: string
+  //gjggikg
 }
