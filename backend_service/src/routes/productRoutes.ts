@@ -73,7 +73,8 @@ productRoutes.get("/:id", getProductById);
  *                 type: string
  *               price:
  *                 type: number
- *               talla:  string
+ *               talla:  
+ *                 type: string
  *     responses:
  *       201:
  *         description: Producto creado
@@ -108,7 +109,8 @@ productRoutes.post("/", createProduct);
  *                 type: string
  *               price:
  *                 type: number
- *               talla: string 
+ *               talla: 
+ *                 type: string 
  *     responses:
  *       200:
  *         description: Producto actualizado
