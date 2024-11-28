@@ -34,12 +34,13 @@ export const getProductById = async(req: Request, res: Response) => {
 // POST - Crear un nuevo Producto
 export const createProduct = async(req: Request, res: Response) => {
   try {
-    const { name, description, price, talla } = req.body;
+    const { name, description, price, talla, imgUrl } = req.body;
     const product = new Product();
     product.name = name;
     product.description = description;
     product.price = price;
     product.talla = talla;
+    product.imgUrl = imgUrl;
 
     await productRepository.save(product);
     res.status(201).json(product);
@@ -51,7 +52,7 @@ export const createProduct = async(req: Request, res: Response) => {
 // PUT - Actualizar un Producto existente
 export const updateProduct = async(req: Request, res: Response) => {
   try {
-    const { name, description, price, talla } = req.body;
+    const { name, description, price, talla, imgUrl } = req.body;
     const product = await productRepository.findOneBy({
       id: parseInt(req.params.id),
     });
@@ -61,6 +62,7 @@ export const updateProduct = async(req: Request, res: Response) => {
       product.description = description ?? product.description;
       product.price = price ?? product.price;
       product.talla = talla ?? product.talla;
+      product.imgUrl = imgUrl ?? product.imgUrl;
 
       await productRepository.save(product);
       res.json(product);
