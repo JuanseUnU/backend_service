@@ -16,5 +16,8 @@ export class Product {
   price!: number;
 
   @Column("text")
-  talla!: string
+  talla!: string;
+
+  @Column("text")
+  imgUrl!: string;
 }
