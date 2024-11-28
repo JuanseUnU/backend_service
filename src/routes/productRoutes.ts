@@ -75,6 +75,8 @@ productRoutes.get("/:id", getProductById);
  *                 type: number
  *               talla:  
  *                 type: string
+ *               imgUrl:
+ *                 type: string
  *     responses:
  *       201:
  *         description: Producto creado
@@ -111,6 +113,8 @@ productRoutes.post("/", createProduct);
  *                 type: number
  *               talla: 
  *                 type: string 
+ *               imgUrl:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Producto actualizado
